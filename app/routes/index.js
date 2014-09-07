@@ -15,7 +15,7 @@ var entities = [
   },
   {
     isFilm: true,
-    title: 'For a Few Buttcheeks More',
+    title: 'For a Few Dollars More',
     tags: ['film', 'sergio leone', 'spaghetti western'],
     timestamp: (new Date()).toString()
   }
