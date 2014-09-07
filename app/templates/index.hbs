@@ -1,0 +1,27 @@
+<hr>
+{{#each model}}
+<div class="row">
+  <div class="col-xs-12">
+    {{#if isText}}
+      <span class="entry-icon"><i class="fa fa-file-text-o"></i></span>
+    {{/if}}
+    {{#if isFilm}}
+      <span class="entry-icon"><i class="fa fa-file-video-o"></i></span>
+    {{/if}}
+    <span class="entry-title"><a href="#">{{title}}</a></span>
+  </div>
+  <div class="col-xs-8 text-left">
+    <span class="entry-tags">
+    {{#each tag in tags}}
+      <a href="#">{{tag}}</a> 
+    {{/each}}
+  </span>
+  </div>
+  <div class="col-xs-4 text-right">
+    <span class="entry-timestamp">{{timestamp}}</span>
+  </div>
+</div>
+
+<hr>
+{{/each}}
+
