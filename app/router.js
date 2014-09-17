@@ -5,7 +5,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route("index");
 });
 
 export default Router;

@@ -15,6 +15,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+
+      // REST API config for ember-data REST adapter 'application'
+      api_host: 'localhost',
+      // api_namespace: 'api'
     }
   };
 
