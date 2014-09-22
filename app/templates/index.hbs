@@ -8,7 +8,7 @@
     {{#if isFilm}}
       <span class="entry-icon"><i class="fa fa-file-video-o"></i></span>
     {{/if}}
-    <span class="entry-title"><a href="#">{{title}}</a></span>
+    <span class="entry-title">{{#link-to 'article' this}}{{title}}{{/link-to}}</span>
   </div>
   <div class="col-xs-8 text-left">
     <span class="entry-tags">
