@@ -5,10 +5,16 @@
       {{#link-to 'index'}}<img class="img-responsive" src="img/me.jpg">{{/link-to}}
       <h1>Adnan Chowdhury</h1>
       <h3>Human Being</h3>
+      <hr>
+      {{#link-to 'create'}}+{{/link-to}}
     </div>
 
     <div class="col-xs-12 col-md-9">
       {{outlet}}
+    </div>
+
+    <div class="debug">
+      {{log 'store.all: ' stuff}}
     </div>
 
   </div>

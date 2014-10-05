@@ -1,14 +1,17 @@
 <hr>
 {{#each model}}
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-8 text-left">
     {{#if isText}}
       <span class="entry-icon"><i class="fa fa-file-text-o"></i></span>
     {{/if}}
     {{#if isFilm}}
       <span class="entry-icon"><i class="fa fa-file-video-o"></i></span>
     {{/if}}
-    <span class="entry-title">{{#link-to 'article' this}}{{title}}{{/link-to}}</span>
+    <span class="entry-title">{{#link-to 'entry' this}}{{title}}{{/link-to}}</span>
+  </div>
+  <div class="col-xs-4 text-right">
+    <button class="btn btn-danger" type="button" {{action "delete" this}}>Delete</button>
   </div>
   <div class="col-xs-8 text-left">
     <span class="entry-tags">
@@ -18,7 +21,7 @@
   </span>
   </div>
   <div class="col-xs-4 text-right">
-    <span class="entry-timestamp">{{timestamp}}</span>
+    <span class="entry-timestamp">{{modified}}</span>
   </div>
 </div>
 
