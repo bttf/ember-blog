@@ -6,15 +6,11 @@
       <h1>Adnan Chowdhury</h1>
       <h3>Human Being</h3>
       <hr>
-      {{#link-to 'create'}}+{{/link-to}}
+      {{#link-to 'create'}}<button class="btn btn-success">create</button>{{/link-to}}
     </div>
 
     <div class="col-xs-12 col-md-9">
       {{outlet}}
-    </div>
-
-    <div class="debug">
-      {{log 'store.all: ' stuff}}
     </div>
 
   </div>
