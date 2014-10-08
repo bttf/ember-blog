@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
 function markdownToHtml(value) {
+  if (!value || value === "")
+    return value;
+
   var html = markdown.toHTML(value);
 
-  console.log('debug: ' + html);
-  console.log('debug: ' + typeof html);
-
-  return new Handlebars.SafeString(html);
+  return new Ember.Handlebars.SafeString(html);
 
 }
 
