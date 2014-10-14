@@ -6,7 +6,9 @@
       <h1>Adnan Chowdhury</h1>
       <h3>Human Being</h3>
       <hr>
-      {{#link-to 'create'}}<button class="btn btn-success">create</button>{{/link-to}}
+      {{#if session.isAuthenticated}}
+        {{#link-to 'create'}}<button class="btn btn-success">create</button>{{/link-to}}
+      {{/if}}
     </div>
 
     <div class="col-xs-12 col-md-9">

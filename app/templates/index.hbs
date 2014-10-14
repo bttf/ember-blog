@@ -1,30 +1,40 @@
 <hr>
-{{#each model}}
+{{#each entry in model}}
 <div class="row">
   <div class="col-xs-8 text-left">
-    {{#if isText}}
+    {{#if entry.isText}}
       <span class="entry-icon"><i class="fa fa-file-text-o"></i></span>
     {{/if}}
-    {{#if isFilm}}
+    {{#if entry.isFilm}}
       <span class="entry-icon"><i class="fa fa-file-video-o"></i></span>
     {{/if}}
-    <span class="entry-title">{{#link-to 'entry' this}}{{title}}{{/link-to}}</span>
+    <span class="entry-title">{{#link-to 'entry' entry}}{{entry.title}}{{/link-to}}</span>
   </div>
   <div class="col-xs-4 text-right">
-    <button class="btn btn-danger" type="button" {{action "delete" this}}>Delete</button>
+    {{#if session.isAuthenticated}}
+      <button class="btn btn-danger" type="button" {{action "delete" entry}}>Delete</button>
+    {{/if}}
   </div>
   <div class="col-xs-8 text-left">
     <span class="entry-tags">
-    {{#each tag in tags}}
+    {{#each tag in entry.tags}}
       <a href="#">{{tag}}</a> 
     {{/each}}
   </span>
   </div>
   <div class="col-xs-4 text-right">
-    <span class="entry-timestamp">{{modified}}</span>
+    <span class="entry-timestamp">{{entry.modified}}</span>
   </div>
 </div>
 
 <hr>
 {{/each}}
+<br>
+{{#unless session.isAuthenticated}}
+  {{#link-to 'login'}}login eh?{{/link-to}}
+{{/unless}}
+
+{{#if session.isAuthenticated}}
+  {{#link-to 'logout'}}logout eh?{{/link-to}}
+{{/if}}
 
