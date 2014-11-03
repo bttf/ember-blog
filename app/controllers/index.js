@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.ArrayController.extend({
+  sortProperties: ['modified'],
+  sortAscending: false,
   actions: {
     delete: function(entry) {
       entry.deleteRecord();
