@@ -9,7 +9,9 @@ export default Ember.ObjectController.extend({
       var controller = this;
       this.get('model').save().then(function(res) {
         controller.transitionToRoute('entry', res.id);
-
+      }, function(err) {
+        controller.get('model').rollback();
+        controller.set('model.error', true);
       });
     }
   }

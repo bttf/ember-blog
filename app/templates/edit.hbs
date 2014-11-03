@@ -24,7 +24,13 @@
 
           </span>
         </div>
+        <div id="error">
+          {{#if error}}
+          <h4 class="text-danger">not happening, error</h4>
+          {{/if}}
+        </div>
       </div>
+
 
       <div class="col-xs-12 body-text">
         {{markdown-to-html body}}

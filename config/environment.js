@@ -6,6 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    'simple-auth': {
+      authorizer: 'authorizer:custom',
+      crossOriginWhitelist: ['http://gethightothis.com:3000']
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -18,7 +22,7 @@ module.exports = function(environment) {
       // when it is created
       
       // REST API config for ember-data REST adapter 'application'
-      api_host: 'http://localhost:3000',
+      api_host: 'http://gethightothis.com:3000',
       // api_namespace: 'api'
     }
   };

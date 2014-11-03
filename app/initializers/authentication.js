@@ -26,7 +26,7 @@ var CustomAuthenticator = Base.extend({
 
       }).then(function(response) {
         Ember.run(function() {
-          resolve({ token: response.session.token, username: creds.username });
+          resolve({ token: response.token });
         });
 
       }, function(xhr, status, error) {
@@ -43,39 +43,50 @@ var CustomAuthenticator = Base.extend({
   invalidate: function(data) {
     var _this = this;
 
-    return new Ember.RSVP.Promise(function(resolve) {
+    return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
-        url: 'http://gethightothis.com:3000/auth',
-        type: 'DELETE',
-        data: JSON.stringify({
-          username: data.username
-        }),
-        contentType: 'application/json'
-
+        url: 'http://gethightothis.com:3000/logout',
+        type: 'GET'
       }).then(function(response) {
         Ember.run(function() {
           resolve();
-
-        })
+        });
       }, function(xhr, status, error) {
         Ember.run(function() {
           reject();
-
         });
       });
+
+      // Ember.$.ajax({
+      //   url: 'http://gethightothis.com:3000/auth',
+      //   type: 'DELETE',
+      //   data: JSON.stringify({
+      //     username: data.username
+      //   }),
+      //   contentType: 'application/json'
+
+      // }).then(function(response) {
+      //   Ember.run(function() {
+      //     resolve();
+
+      //   })
+      // }, function(xhr, status, error) {
+      //   Ember.run(function() {
+      //     reject();
+
+      //   });
+      // });
     });
   }
 });
 
 export var initialize = function(container, application) {
   container.register('authenticator:custom', CustomAuthenticator);
-
 };
 
 export default {
   name: 'authentication',
   before: 'simple-auth',
   initialize: initialize
-
 };
 
