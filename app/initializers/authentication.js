@@ -30,10 +30,10 @@ var CustomAuthenticator = Base.extend({
         });
 
       }, function(xhr, status, error) {
-        var response = JSON.parse(xhr.responseText);
+        console.log(error);
 
         Ember.run(function() {
-          reject(response.error);
+          reject(error);
 
         });
       });
