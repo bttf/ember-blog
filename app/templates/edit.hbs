@@ -21,9 +21,15 @@
 
           <span class="input-group-btn">
             <button class="btn btn-default input-sm" type="button" {{action "save"}}>Submit</button>
-
           </span>
         </div>
+          <button type="button" class="btn btn-primary" {{action "tempSave"}}>save</button>
+          <br/>
+          <div id="tempSave">
+            {{#if saved}}
+            <span class="text-success">Saved, {{lastSave}}</span>
+            {{/if}}
+          </div>
         <div id="error">
           {{#if error}}
           <h4 class="text-danger">not happening, error</h4>
