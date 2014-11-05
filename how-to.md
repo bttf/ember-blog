@@ -98,7 +98,6 @@ There are three main areas that we need to implement on our API server:
   * username: String
   * password: String
   * token: String
-  * 
   Notice the **token** property; this is important for us when authenticating our Ember.js clients. For now, let's leave it at that.
 
 7. Now that we have our models, we can define our **routes** that we will use to CRUD them. Currently, our express app is loaded with default routes that the express generator put in for us, i.e. 'routes/index.js' and 'routes/users.js'. Feel free to delete these, along with any corresponding code in **app.js**. We will be creating our own from scratch.
@@ -109,7 +108,7 @@ There are three main areas that we need to implement on our API server:
   ▾ routes/
     articles.js
   ```
-9. Start off by including express and router, and add on our new Article model:
+9. Include the following :
 
   ```
   var express = require('express');
@@ -121,25 +120,24 @@ There are three main areas that we need to implement on our API server:
 
   ```
   router.post('/', function(req, res) {
-  var article = new Article;
-  if (req.body.article) {
-    var a = req.body.article;
-    article.title = a.title;
-    article.body = a.body;
-    article.tags = a.tags;
-    article.created = (new Date()).toISOString();
-  }
-
-  article.save(function(err, article) {
-    if (err) {
-      res.send(err);
+    var article = new Article;
+    if (req.body.article) {
+      var a = req.body.article;
+      article.title = a.title;
+      article.body = a.body;
+      article.tags = a.tags;
+      article.created = (new Date()).toISOString();
     }
     
-    res.json({
-      article: article
+    article.save(function(err, article) {
+      if (err) {
+        res.send(err);
+      }
+        
+      res.json({
+        article: article
+      });
     });
-
   });
-});
 
   ```
