@@ -14,6 +14,7 @@ export default Ember.ObjectController.extend({
         controller.transitionToRoute('index');
       }, function(err) {
         console.log('LOGIN FAILURE');
+	console.log(err);
         controller.set('model.error', true);
       });
     }

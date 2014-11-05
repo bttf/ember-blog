@@ -1,4 +1,5 @@
 import Base from 'simple-auth/authenticators/base';
+import ENV from '../config/environment';
 
 var CustomAuthenticator = Base.extend({
   restore: function(data) {
@@ -16,7 +17,7 @@ var CustomAuthenticator = Base.extend({
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
-        url: 'http://gethightothis.com:3000/auth',
+        url: ENV.APP.api_host + '/auth',
         type: 'POST',
         data: JSON.stringify({
           username: creds.username,
@@ -45,7 +46,7 @@ var CustomAuthenticator = Base.extend({
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
-        url: 'http://gethightothis.com:3000/logout',
+        url: ENV.APP.api_host + '/logout',
         type: 'GET'
       }).then(function(response) {
         Ember.run(function() {
