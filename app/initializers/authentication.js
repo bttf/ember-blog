@@ -5,7 +5,18 @@ var CustomAuthenticator = Base.extend({
   restore: function(data) {
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(data.token)) 
-        resolve(data);
+        Ember.$.ajax({
+          url: ENV.APP.api_host + '/validate',
+          type: 'POST',
+          data: JSON.stringify({
+            token: data.token
+          }),
+          contentType: 'application/json'
+        }).then(function(response) {
+          resolve(data);
+        }, function(err) {
+          reject(err);
+        });
       else
         reject();
 
