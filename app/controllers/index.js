@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.ArrayController.extend({
   sortProperties: ['modified'],
   sortAscending: false,
+  itemController: 'entry',
   actions: {
     delete: function(entry) {
       entry.deleteRecord();

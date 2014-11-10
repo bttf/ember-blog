@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     'simple-auth': {
       authorizer: 'authorizer:custom',
-      crossOriginWhitelist: ['http://gethightothis.com:3000']
+      crossOriginWhitelist: ['http://104.131.160.204']
     },
     EmberENV: {
       FEATURES: {
@@ -22,7 +22,7 @@ module.exports = function(environment) {
       // when it is created
       
       // REST API config for ember-data REST adapter 'application'
-      api_host: 'http://gethightothis.com:3000',
+      api_host: 'http://104.131.160.204',
       // api_namespace: 'api'
     }
   };
