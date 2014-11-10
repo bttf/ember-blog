@@ -4,7 +4,7 @@ function markdownToHtml(value) {
   if (!value || value === "")
     return value;
 
-  var html = markdown.toHTML(value);
+  var html = marked(value);
 
   return new Ember.Handlebars.SafeString(html);
 
