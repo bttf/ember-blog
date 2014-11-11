@@ -3,15 +3,25 @@ html, body {
 }
 
 body {
-  background-color: #ccc;
+  background-color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
 hr {
   margin: 0.5em 0;
 }
 
+a {
+  color: #22BAD9;
+  font-weight: 400;
+}
+
+a:hover {
+  color: #aaf1ff;
+}
+
 .home-bar {
-  background-color: #ddd;
+  background-color: #fff;
 }
 
 .entry-icon {
