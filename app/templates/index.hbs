@@ -1,6 +1,6 @@
-<hr>
 {{#each entry in controller}}
 <div class="row">
+  <hr>
   <div class="col-xs-8 text-left">
     {{#if isText}}
       <span class="entry-icon"><i class="fa fa-file-text-o"></i></span>
@@ -26,15 +26,13 @@
     <span class="entry-timestamp">{{calendar-time entry.modified}}</span>
   </div>
 </div>
-
-<hr>
 {{/each}}
-<br>
-{{#unless session.isAuthenticated}}
-  {{#link-to 'login'}}login eh?{{/link-to}}
-{{/unless}}
 
 {{#if session.isAuthenticated}}
-  {{#link-to 'logout'}}logout eh?{{/link-to}}
+<div class="row">
+  <div class="col-xs-12">
+    <span>admin panel</span>
+    {{#link-to 'logout'}}<button class="btn btn-info">Logout</button>{{/link-to}}
+  </div>
+</div>
 {{/if}}
-
