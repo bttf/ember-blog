@@ -1,3 +1,6 @@
-<h1>{{title}}{{#if session.isAuthenticated}}<sup>{{#link-to 'entry.edit'}}edit{{/link-to}}</sup>{{/if}}</h1>
+<div class="back-button">
+  {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
+</div>
+<h1 class="entry-index-title">{{title}}</h1>
 <p>{{markdown-to-html body}}</p>
 
