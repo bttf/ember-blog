@@ -1,47 +1,46 @@
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{title}}</h1>
-
-    <hr />
-
-    <form>
-      <div class="form-group">
-        {{input type="text" class="form-control" value=title placeholder="Title"}}
-
-      </div>
-
-      <div class="form-group">
-        {{textarea value=body class="form-control" rows="10" placeholder="Body"}}
-
-      </div>
-
-      <div class="form-group">
-        <div class="input-group">
-          {{input value=tags type="text" class="form-control input-sm" placeholder="Tags"}}
-
-          <span class="input-group-btn">
-            <button class="btn btn-default input-sm" type="button" {{action "save"}}>Submit</button>
-          </span>
-        </div>
-          <button type="button" class="btn btn-primary" {{action "tempSave"}}>save</button>
-          <br/>
-          <div id="tempSave">
-            {{#if saved}}
-            <span class="text-success">Saved, {{lastSave}}</span>
-            {{/if}}
-          </div>
-        <div id="error">
-          {{#if error}}
-          <h4 class="text-danger">not happening, error</h4>
-          {{/if}}
-        </div>
-      </div>
-
-
-      <div class="col-xs-12 body-text">
-        {{markdown-to-html body}}
-      </div>
-
-    </form>
-  </div>
+<div class="back-button">
+  {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
 </div>
+<h1>{{title}}</h1>
+
+<hr />
+
+<form>
+  <div class="form-group">
+    {{input type="text" class="form-control" value=title placeholder="Title"}}
+
+  </div>
+
+  <div class="form-group">
+    {{textarea value=body class="form-control" rows="10" placeholder="Body"}}
+
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      {{input value=tags type="text" class="form-control input-sm" placeholder="Tags"}}
+
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-warning input-sm" {{action "tempSave"}}>Save</button>
+        <button class="btn btn-primary input-sm" type="button" {{action "save"}}>Submit</button>
+      </span>
+    </div>
+    <br>
+    <div id="col-xs-12 tempSave text-right">
+      {{#if saved}}
+      <span class="text-success">Saved, {{lastSave}}</span>
+      {{/if}}
+    </div>
+    <div id="error">
+      {{#if error}}
+      <h4 class="text-danger">not happening, error</h4>
+      {{/if}}
+    </div>
+  </div>
+
+
+  <div class="col-xs-12 body-text">
+    {{markdown-to-html body}}
+  </div>
+
+</form>
