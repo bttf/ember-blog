@@ -11,8 +11,8 @@ export default Ember.ArrayController.extend({
         function() {
           console.log('He\'s deleted, Jim.');
         }, function(err) {
-          // entry.rollback() ? it doesn't WORK!
           console.log('error deleting');
+          console.log(err);
         }
       );
     }
