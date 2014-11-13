@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  error: false,
+
   actions: {
     auth: function() {
       var controller = this;
@@ -10,12 +12,11 @@ export default Ember.ObjectController.extend({
         password: $('#password').val()
       }).then(function() {
         console.log('LOGIN SUCCESS');
-        controller.set('model.loginSuccessful', true);
         controller.transitionToRoute('index');
       }, function(err) {
         console.log('LOGIN FAILURE');
-	console.log(err);
-        controller.set('model.error', true);
+        console.log(err);
+        controller.set('error', true);
       });
     }
   }

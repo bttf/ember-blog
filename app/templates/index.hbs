@@ -2,12 +2,6 @@
 <div class="row">
   <hr>
   <div class="col-xs-8 text-left">
-    {{#if isText}}
-      <span class="entry-icon"><i class="fa fa-file-text-o"></i></span>
-    {{/if}}
-    {{#if isFilm}}
-      <span class="entry-icon"><i class="fa fa-file-video-o"></i></span>
-    {{/if}}
     <span class="entry-title">{{#link-to 'entry' entry}}{{entry.title}}{{/link-to}}</span>
   </div>
   {{#if session.isAuthenticated}}
