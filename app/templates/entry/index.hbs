@@ -2,6 +2,8 @@
   {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
 </div>
 <h1 class="entry-index-title">{{title}}</h1>
-{{#link-to 'entry.edit' this}}edit{{/link-to}}
+{{#if session.isAuthenticated}}
+  {{#link-to 'entry.edit' this}}edit{{/link-to}}
+{{/if}}
 <p>{{markdown-to-html body}}</p>
 

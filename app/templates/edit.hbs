@@ -2,9 +2,10 @@
   {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
 </div>
 <h1>{{title}}</h1>
-
+<p>
+  {{markdown-to-html body}}
+</p>
 <hr />
-
 <form>
   <div class="form-group">
     {{input type="text" class="form-control" value=title placeholder="Title"}}
@@ -37,10 +38,4 @@
       {{/if}}
     </div>
   </div>
-
-
-  <div class="col-xs-12 body-text">
-    {{markdown-to-html body}}
-  </div>
-
 </form>
