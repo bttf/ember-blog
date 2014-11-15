@@ -68,26 +68,6 @@ var CustomAuthenticator = Base.extend({
           reject();
         });
       });
-
-      // Ember.$.ajax({
-      //   url: 'http://gethightothis.com:3000/auth',
-      //   type: 'DELETE',
-      //   data: JSON.stringify({
-      //     username: data.username
-      //   }),
-      //   contentType: 'application/json'
-
-      // }).then(function(response) {
-      //   Ember.run(function() {
-      //     resolve();
-
-      //   })
-      // }, function(xhr, status, error) {
-      //   Ember.run(function() {
-      //     reject();
-
-      //   });
-      // });
     });
   }
 });
