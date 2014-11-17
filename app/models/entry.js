@@ -9,6 +9,7 @@ export default DS.Model.extend({
   body: attr('string'),
   url: attr('string'),
   created: attr('date'),
-  modified: attr('date')
+  modified: attr('date'),
+  isDraft: attr('boolean')
 
 });

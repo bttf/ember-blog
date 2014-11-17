@@ -22,6 +22,7 @@
       {{input value=tags type="text" class="form-control input-sm" placeholder="Tags"}}
 
       <span class="input-group-btn">
+        <button type="button" {{bind-attr class=':btn :input-sm isDraft:btn-success:btn-danger isDraft::striked'}} {{action "toggleDraft"}}>isDraft</button>
         <button type="button" class="btn btn-warning input-sm" {{action "tempSave"}}>Save</button>
         <button class="btn btn-primary input-sm" type="button" {{action "save"}}>Submit</button>
       </span>

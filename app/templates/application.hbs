@@ -1,7 +1,28 @@
 <div class="container">
   <div class="row">
-
     <div class="col-xs-12">
+      {{#if session.isAuthenticated}}
+      <ul class="nav nav-tabs">
+        {{#link-to 'index' tagName='li' href=false}}
+          {{#link-to 'index'}}
+          Front Page
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to 'drafts' tagName='li' href=false}}
+          {{#link-to 'drafts'}}
+          Drafts
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to 'create' tagName='li' href=false}}
+          {{#link-to 'create'}}
+          Create 
+          {{/link-to}}
+        {{/link-to}}
+        <li>
+          <a href="#" {{action "logout"}}>Logout</a>
+        </li>
+      </ul>
+      {{/if}}
       {{outlet}}
     </div>
   </div>
@@ -14,19 +35,8 @@
         <div class="col-xs-6">
           <br>
           <img class="img-responsive" src="img/me.jpg">
-          {{#if session.isAuthenticated}}
-          <br>
-          <button class="btn btn-info" {{action 'logout'}}>Logout</button>
-          <br>
-          {{/if}}
         </div>
       </div>
     </div>
-    {{#if session.isAuthenticated}}
-    <div class="col-xs-4 col-sm-7 text-right">
-      <br>
-      {{#link-to 'create'}}<button class="btn btn-success">Create</button>{{/link-to}}
-    </div>
-    {{/if}}
   </div>
 </div>
