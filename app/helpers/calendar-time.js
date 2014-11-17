@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 function calendarTime(value) {
-  if (!value || value === "")
+  if (!value || value === "") {
     return value;
+  }
 
   var time = moment(value).calendar();
 

@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 function markdownToHtml(value) {
-  if (!value || value === "")
+  if (!value || value === "") {
     return value;
+  }
 
   var html = marked(value);
 

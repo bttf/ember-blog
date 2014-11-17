@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Base from 'simple-auth/authorizers/base';
 
 var CustomAuthorizer = Base.extend({

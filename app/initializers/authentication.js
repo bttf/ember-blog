@@ -1,10 +1,11 @@
+import Ember from 'ember';
 import Base from 'simple-auth/authenticators/base';
 import ENV from '../config/environment';
 
 var CustomAuthenticator = Base.extend({
   restore: function(data) {
     return new Ember.RSVP.Promise(function(resolve, reject) {
-      if (!Ember.isEmpty(data.token)) 
+      if (!Ember.isEmpty(data.token)) {
         Ember.$.ajax({
           url: ENV.APP.api_host + '/validate',
           type: 'POST',
@@ -12,20 +13,19 @@ var CustomAuthenticator = Base.extend({
             token: data.token
           }),
           contentType: 'application/json'
-        }).then(function(response) {
+        }).then(function() {
           resolve(data);
         }, function(err) {
           reject(err);
         });
-      else
+      }
+      else {
         reject();
-
+      }
     });
   },
 
   authenticate: function(creds) {
-    var _this = this;
-
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
         url: ENV.APP.api_host + '/auth',
@@ -53,8 +53,6 @@ var CustomAuthenticator = Base.extend({
   },
 
   invalidate: function(data) {
-    var _this = this;
-
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
         url: ENV.APP.api_host + '/logout',
