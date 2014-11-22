@@ -18,6 +18,11 @@
           Create 
           {{/link-to}}
         {{/link-to}}
+        {{#link-to 'accounts' tagName='li' href=false}}
+          {{#link-to 'accounts'}}
+          Accounts
+          {{/link-to}}
+        {{/link-to}}
         <li>
           <a href="#" {{action "logout"}}>Logout</a>
         </li>

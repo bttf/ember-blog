@@ -1,0 +1,38 @@
+<br>
+<div class="row">
+  <div class="col-xs-8">
+    <p>
+      Username
+    </p>
+    <hr>
+  </div>
+</div>
+{{#each}}
+  {{#unless isDirty}}
+    <br>
+    <div class="row">
+      <div class="col-xs-8">
+        <p>
+          {{username}}
+        </p>
+      </div>
+      <div class="col-xs-4 text-right">
+        {{#if deleteToggle}}
+        <button class="btn btn-warning" type="button"{{action 'toggleDelete'}}>Cancel</button>
+        <button class="btn btn-danger" type="button"{{action 'delete' this}}>Sure?</button>
+        {{else}}
+        <button class="btn btn-danger" type="button" {{action 'toggleDelete'}}>Delete</button>
+        {{/if}}
+      </div>
+    </div>
+    {{/unless}}
+{{/each}}
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" type="button" {{action 'toggleCreate'}}>Create User</button>
+    {{#if createToggle}}
+    {{render 'create-user' controller.newUser}}
+    {{/if}}
+  </div>
+</div>

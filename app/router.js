@@ -16,8 +16,8 @@ Router.map(function() {
 
   this.route('login');
   this.route('logout');
-  this.route('ah-ah-ah');
   this.route('drafts');
+  this.route('accounts');
 });
 
 export default Router;

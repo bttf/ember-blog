@@ -1,3 +1,4 @@
+{{#unless entry.isDirty}}
 <hr>
 <div class="row" {{bind-attr class="entry.deleteToggle:bg-danger"}}>
   <div class="col-xs-8 text-left">
@@ -25,3 +26,4 @@
     <span class="entry-timestamp">{{calendar-time entry.modified}}</span>
   </div>
 </div>
+{{/unless}}

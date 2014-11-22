@@ -1,0 +1,20 @@
+<br>
+<div class="row">
+  <div class="col-xs-4">
+    <form>
+      <div class="form-group">
+        <br>
+        {{input type="text" class="form-control" value=username placeholder="Username"}}
+        <br>
+        <div class="form-group" {{bind-attr class="passwordError:has-error"}}>
+          {{input type="password" class="form-control" value=password placeholder="Password"}}
+        </div>
+        <div class="form-group" {{bind-attr class="passwordError:has-error"}}>
+          {{input type="password" class="form-control" value=confirmPass placeholder="Confirm password"}}
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" {{action 'save' this}}>Save</button>
+      </div>
+    </form>
+  </div>
+</div>
