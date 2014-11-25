@@ -1,0 +1,9 @@
+<div class="back-button">
+  {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
+</div>
+<h3>Articles matching '{{tagName}}'</h3>
+{{#each entry in model}}
+  {{#unless entry.isDraft}}
+    {{partial 'index-list'}}
+  {{/unless}}
+{{/each}}

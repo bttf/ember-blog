@@ -18,6 +18,7 @@ Router.map(function() {
   this.route('logout');
   this.route('drafts');
   this.route('accounts');
+  this.route('tag', { path: '/tag/:tag_name' });
 });
 
 export default Router;
