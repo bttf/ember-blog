@@ -5,4 +5,3 @@ export default Ember.ArrayController.extend({
   sortAscending: false,
   itemController: 'entry'
 });
-

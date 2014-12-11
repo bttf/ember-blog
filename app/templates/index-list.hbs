@@ -9,7 +9,7 @@
     {{#link-to 'entry.edit' entry}}<button class="btn btn-primary" type="button">Edit</button>{{/link-to}}
     {{#if entry.deleteToggle}}
     <button class="btn btn-warning" type="button" {{action 'toggleDelete'}}>Cancel</button>
-    <button class="btn btn-danger" type="button" {{action 'delete' entry}}>Sure?</button>
+    <button class="btn btn-danger" type="button" {{action 'delete'}}>Sure?</button>
     {{else}}
     <button class="btn btn-danger" type="button" {{action 'toggleDelete'}}>Delete</button>
     {{/if}}

@@ -10,6 +10,16 @@ export default Ember.ObjectController.extend({
       else {
         this.set('deleteToggle', !this.get('deleteToggle'));
       }
+    },
+
+    delete: function() {
+      this.get('model').deleteRecord();
+      this.get('model').save().then(function() {
+        console.log('He\'s deleted, Jim.');
+      }, function(err) {
+        console.log('error deleting');
+        console.log(err);
+      });
     }
   }
 });
