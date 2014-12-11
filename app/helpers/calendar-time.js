@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 function calendarTime(value) {
-  if (!value || value === "") {
+  if (Ember.isEmpty(value)) {
     return value;
   }
 

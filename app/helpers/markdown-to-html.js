@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 function markdownToHtml(value) {
-  if (!value || value === "") {
+  if (Ember.isEmpty(value)) {
     return value;
   }
 

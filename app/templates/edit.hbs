@@ -1,20 +1,22 @@
 <div class="back-button">
   {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
 </div>
+
 <h1 class="entry-index-title">{{title}}</h1>
+
 <p>
   {{markdown-to-html body}}
 </p>
+
 <hr />
+
 <form>
   <div class="form-group">
     {{input type="text" class="form-control" value=title placeholder="Title"}}
-
   </div>
 
   <div class="form-group">
     {{textarea value=body class="form-control" rows="10" placeholder="Body"}}
-
   </div>
 
   <div class="form-group">
@@ -30,12 +32,12 @@
     <br>
     <div id="col-xs-12 tempSave text-right">
       {{#if saved}}
-      <span class="text-success">Saved, {{lastSave}}</span>
+      <span class="text-success">Saved, {{saved}}</span>
       {{/if}}
     </div>
     <div id="error">
       {{#if error}}
-      <h4 class="text-danger">not happening, error</h4>
+      <h4 class="text-danger">{{error}}</h4>
       {{/if}}
     </div>
   </div>
