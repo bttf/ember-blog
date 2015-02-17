@@ -1,18 +1,9 @@
 import Ember from 'ember';
-
-function markdownToHtml(value) {
-  if (Ember.isEmpty(value)) {
-    return value;
+export function markdownToHtml(input) {
+  if (Ember.isEmpty(input)) {
+    return input;
   }
-
-  var html = marked(value);
-
+  var html = window.marked(input);
   return new Ember.Handlebars.SafeString(html);
-
 }
-
-export {
-  markdownToHtml
-};
-
 export default Ember.Handlebars.makeBoundHelper(markdownToHtml);
