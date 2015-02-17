@@ -22,6 +22,14 @@ a:hover {
   color: #79e9ff;
 }
 
+h3 {
+  margin: 0;
+}
+
+.tag-header {
+  margin: 0.5em 0;
+}
+
 .footer {
   margin-top: 2em;
   font-size: 1em;
@@ -60,3 +68,4 @@ a:hover {
 .striked {
   text-decoration: line-through;
 }
+

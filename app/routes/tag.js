@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     controller.set('tagName', this.get('tagName'));
     controller.set('model', model);
   },
+
   model: function(params) {
     this.set('tagName', params.tag_name);
     return this.get('store').find('entry').then(function(entries) {
