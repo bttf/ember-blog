@@ -6,7 +6,7 @@
   </div>
   <div class="form-group">
 
-    {{textarea value=entry.body class="form-control" rows="10" placeholder="Body"}}
+    {{textarea value=entry.body class="body-input form-control" rows="10" placeholder="Body"}}
 
   </div>
   <div class="form-group">
@@ -14,6 +14,12 @@
 
       {{input value=entry.tags type="text" class="form-control input-sm" placeholder="Tags"}}
 
+      <span class="input-group-addon">
+
+        {{input type="checkbox" aria-label="autoSaveToggle" checked=autoSaveEnabled}}
+        Auto-Save
+
+      </span>
       <span class="input-group-addon">
 
         {{input type="checkbox" aria-label="isDraft" checked=entry.isDraft}}
