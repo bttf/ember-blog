@@ -1,0 +1,46 @@
+<form>
+  <div class="form-group">
+
+    {{input type="text" class="form-control" value=entry.title placeholder="Title"}}
+
+  </div>
+  <div class="form-group">
+
+    {{textarea value=entry.body class="form-control" rows="10" placeholder="Body"}}
+
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+
+      {{input value=entry.tags type="text" class="form-control input-sm" placeholder="Tags"}}
+
+      <span class="input-group-addon">
+
+        {{input type="checkbox" aria-label="isDraft" checked=entry.isDraft}}
+        Draft
+
+      </span>
+      <span class="input-group-btn">
+
+        <button type="button" class="btn btn-warning input-sm" {{action "saveOnly" entry}}>Save</button>
+        <button class="btn btn-primary input-sm" type="button" {{action "saveAndSubmit" entry}}>Submit</button>
+
+      </span>
+    </div>
+    <br>
+    <div id="col-xs-12 tempSave text-right">
+
+      {{#if saved}}
+        <span class="text-success">Saved, {{saved}}</span>
+      {{/if}}
+
+    </div>
+    <div id="error">
+
+      {{#if error}}
+        <h4 class="text-danger">{{error}}</h4>
+      {{/if}}
+
+    </div>
+  </div>
+</form>
