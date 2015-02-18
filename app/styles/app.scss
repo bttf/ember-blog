@@ -1,30 +1,34 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif);
+
 html, body {
   margin: 0;
-  height: 100%;
+  /*height: 100%;*/
   font-size: 100%;
 }
 
 body {
   background-color: #fff;
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Serif', serif;
 }
 
 hr {
   margin: 0.5em 0;
 }
 
-a {
-  color: #22BAD9;
-  font-weight: 400;
+a, a:hover {
+  color: #333;
 }
 
 a:hover {
-  color: #79e9ff;
+  text-decoration: underline;
 }
 
 h3 {
   margin: 0;
+}
+
+.app-container {
+  padding: 0 8em 5em 8em;
 }
 
 .paginator {
@@ -40,15 +44,22 @@ h3 {
   font-size: 1em;
 }
 
+.entry-listing {
+  margin: 2.5em 0;
+}
+
 .entry-icon {
   font-size: 1em;
 }
 
 .entry-title {
+  font-size: 2.5em;
 }
 
-.entry-timestamp, .entry-tags {
-  font-size: 0.7em;
+.entry-timestamp {
+  color: #AAA;
+  font-size: 0.8em;
+  font-style: italic;
 }
 
 .entry-tags a {

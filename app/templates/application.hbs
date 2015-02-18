@@ -1,49 +1,44 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="app-container col-xs-12">
+
       {{#if session.isAuthenticated}}
-      <ul class="nav nav-tabs">
-        {{#link-to 'index' tagName='li' href=false}}
-          {{#link-to 'index'}}
-          Front Page
+
+        <ul class="nav nav-tabs">
+
+          {{#link-to 'index' tagName='li' href=false}}
+            {{#link-to 'index'}}
+            Front Page
+            {{/link-to}}
           {{/link-to}}
-        {{/link-to}}
-        {{#link-to 'drafts' tagName='li' href=false}}
-          {{#link-to 'drafts'}}
-          Drafts
+
+          {{#link-to 'drafts' tagName='li' href=false}}
+            {{#link-to 'drafts'}}
+            Drafts
+            {{/link-to}}
           {{/link-to}}
-        {{/link-to}}
-        {{#link-to 'create' tagName='li' href=false}}
-          {{#link-to 'create'}}
-          Create 
+
+          {{#link-to 'create' tagName='li' href=false}}
+            {{#link-to 'create'}}
+            Create 
+            {{/link-to}}
           {{/link-to}}
-        {{/link-to}}
-        {{#link-to 'accounts' tagName='li' href=false}}
-          {{#link-to 'accounts'}}
-          Accounts
+
+          {{#link-to 'accounts' tagName='li' href=false}}
+            {{#link-to 'accounts'}}
+            Accounts
+            {{/link-to}}
           {{/link-to}}
-        {{/link-to}}
-        <li>
-          <a href="#" {{action "logout"}}>Logout</a>
-        </li>
-      </ul>
+
+          <li>
+            <a href="#" {{action "logout"}}>Logout</a>
+          </li>
+        </ul>
       {{/if}}
 
       {{outlet}}
 
-    </div>
-  </div>
-  <div class="row footer">
-    <div class="col-xs-8 col-sm-5">
-      <hr>
-      This is {{#link-to 'index'}}chewbonga blog{{/link-to}}<br>
-      Operated by <a href="http://adnan-chowdhury.com">Adnan Chowdhury</a>
-      <div class="row">
-        <div class="col-xs-6">
-          <br>
-          <img class="img-responsive" src="img/me.jpg">
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
