@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Noto+Serif);
+@import url(http://fonts.googleapis.com/css?family=Noto+Serif|Open+Sans);
 
 html, body {
   margin: 0;
@@ -27,6 +27,10 @@ h3 {
   margin: 0;
 }
 
+.login {
+  margin-top: 3em;
+}
+
 .app-container {
   padding: 0 8em 5em 8em;
 }
@@ -42,6 +46,13 @@ h3 {
 .footer {
   margin-top: 2em;
   font-size: 1em;
+  font-family: 'Open Sans';
+  a, a:hover {
+    color: #555;
+  }
+  li {
+    padding: 0 15px;
+  }
 }
 
 .entry-listing {
@@ -74,6 +85,10 @@ h3 {
 
 .back-button a {
   font-weight: 300;
+}
+
+.entry-index {
+  padding: 0 15px;
 }
 
 .entry-index-title {

@@ -19,7 +19,7 @@ module.exports = function(environment) {
 
     APP: {
       api_host: 'http://localhost:3000',
-      limit: 10
+      limit: 6 
     }
   };
 

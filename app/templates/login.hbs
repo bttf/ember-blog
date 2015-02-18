@@ -1,14 +1,19 @@
-<br>
-<br>
-<div class="col-xs-4">
-  <form>
-    <div {{bind-attr class=":form-group error:has-error"}}>
-      {{input type="text" id="username" class="form-control" placeholder="username"}}
-    </div>
-    <div {{bind-attr class=":form-group error:has-error"}}>
-      {{input type="password" id="password" class="form-control" placeholder="password"}}
-    </div>
-    <button class="btn btn-default input-sm" type="submit" {{action "auth"}}>go</button>
-  </form>
+<div class='login row'>
+  <div class="col-xs-4">
+    <form>
+      <div {{bind-attr class=":form-group error:has-error"}}>
+
+        {{input type="text" id="username" class="form-control" placeholder="username"}}
+
+      </div>
+      <div {{bind-attr class=":form-group error:has-error"}}>
+
+        {{input type="password" id="password" class="form-control" placeholder="password"}}
+
+      </div>
+      <button class="btn btn-default input-sm" type="submit" {{action "auth"}}>go</button>
+    </form>
+  </div>
 </div>
+
 {{outlet}}

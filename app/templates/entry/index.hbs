@@ -1,18 +1,20 @@
-<div class="back-button">
+<div class='entry-index'>
+  <div class="back-button">
 
-  {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
+    {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
 
-</div>
-<h1 class="entry-index-title">{{title}}</h1>
+  </div>
+  <h1 class="entry-index-title">{{title}}</h1>
 
-{{#if session.isAuthenticated}}
+  {{#if session.isAuthenticated}}
 
-  {{#link-to 'entry.edit' this}}edit{{/link-to}}
+    {{#link-to 'entry.edit' this}}edit{{/link-to}}
 
-{{/if}}
+  {{/if}}
 
-<div class='entry-index-body'>
+  <div class='entry-index-body'>
 
-  {{markdown-to-html body}}
+    {{markdown-to-html body}}
 
+  </div>
 </div>
