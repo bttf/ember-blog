@@ -1,0 +1,84 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+hr {
+  margin: 0.5em 0;
+}
+
+a {
+  color: #22BAD9;
+  font-weight: 400;
+}
+
+a:hover {
+  color: #79e9ff;
+}
+
+h3 {
+  margin: 0;
+}
+
+.paginator {
+  margin-top: 2em;
+}
+
+.tag-header {
+  margin: 0.5em 0;
+}
+
+.footer {
+  margin-top: 2em;
+  font-size: 1em;
+}
+
+.entry-icon {
+  font-size: 1em;
+}
+
+.entry-title {
+}
+
+.entry-timestamp,
+.entry-tags {
+  font-size: 0.7em;
+}
+
+.entry-tags a {
+  color: #555;
+}
+
+.back-button {
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+.back-button a {
+  font-weight: 300;
+}
+
+.entry-index-title {
+  margin: 0.5em 0;
+  font-size: 3em;
+}
+
+.entry-index-body {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.8em;
+  }
+  line-height: 1.8em;
+}
+
+.striked {
+  text-decoration: line-through;
+}
+
