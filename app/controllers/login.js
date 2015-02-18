@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+var $ = Ember.$;
+
 export default Ember.ObjectController.extend({
   error: false,
 

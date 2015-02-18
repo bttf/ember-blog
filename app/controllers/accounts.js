@@ -18,7 +18,7 @@ export default Ember.ArrayController.extend({
       }
       else {
         var controller = this;
-        user.save().then(function(res) {
+        user.save().then(function() {
           console.log('user created');
           controller.set('createToggle', !controller.get('createToggle'));
         }, function(err) {

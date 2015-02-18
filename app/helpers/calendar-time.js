@@ -5,7 +5,7 @@ function calendarTime(value) {
     return value;
   }
 
-  var time = moment(value).calendar();
+  var time = window.moment(value).calendar();
 
   return new Ember.Handlebars.SafeString(time);
 

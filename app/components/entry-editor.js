@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 
     if (enabled) {
       var _this = this;
-      $('.body-input').keyup(function(e) {
+      $('.body-input').keyup(function() {
         pushAutoSaveTimeout(_this);
       });
     } else {

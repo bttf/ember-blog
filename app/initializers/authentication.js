@@ -52,25 +52,25 @@ var CustomAuthenticator = Base.extend({
     });
   },
 
-  invalidate: function(data) {
+  invalidate: function(/* data */) {
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
         url: ENV.APP.api_host + '/logout',
         type: 'GET'
-      }).then(function(response) {
+      }).then(function() {
         Ember.run(function() {
           resolve();
         });
-      }, function(xhr, status, error) {
+      }, function(err) {
         Ember.run(function() {
-          reject();
+          reject(err);
         });
       });
     });
   }
 });
 
-export var initialize = function(container, application) {
+export var initialize = function(container) {
   container.register('authenticator:custom', CustomAuthenticator);
 };
 
