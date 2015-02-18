@@ -1,5 +1,31 @@
 {{#each entry in controller}}
-  {{#unless entry.isDraft}}
-    {{partial 'index-list'}}
-  {{/unless}}
+
+  {{partial 'index-list'}}
+
 {{/each}}
+
+
+  <div class='row paginator'>
+    <div class='col-xs-6 text-left'>
+
+      {{#unless prevPageDisabled}}
+
+        {{#link-to 'index/p' prevPage}}
+          <i class='fa fa-angle-double-left'></i> Previous
+        {{/link-to}}
+
+      {{/unless}}
+
+    </div>
+    <div class='col-xs-6 text-right'>
+
+      {{#if hasMore}}
+
+        {{#link-to 'index/p' nextPage}}
+          Next <i class='fa fa-angle-double-right'></i></a>
+        {{/link-to}}
+
+      {{/if}}
+
+    </div>
+  </div>

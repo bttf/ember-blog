@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('drafts');
   this.route('accounts');
   this.route('tag', { path: '/tag/:tag_name' });
+  this.route('index/p', { path: '/p/:offset' });
 });
 
 export default Router;

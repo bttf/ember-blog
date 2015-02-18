@@ -26,6 +26,10 @@ h3 {
   margin: 0;
 }
 
+.paginator {
+  margin-top: 2em;
+}
+
 .tag-header {
   margin: 0.5em 0;
 }

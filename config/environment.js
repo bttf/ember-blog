@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     'simple-auth': {
       authorizer: 'authorizer:custom',
-      crossOriginWhitelist: ['http://localhost']
+      crossOriginWhitelist: ['http://localhost:3000']
     },
     EmberENV: {
       FEATURES: {
@@ -18,12 +18,8 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-      
-      // REST API config for ember-data REST adapter 'application'
-      api_host: 'http://localhost',
-      // api_namespace: 'api'
+      api_host: 'http://localhost:3000',
+      limit: 10
     }
   };
 
