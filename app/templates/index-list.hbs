@@ -1,29 +1,48 @@
-{{#unless entry.isDirty}}
 <hr>
 <div class="row" {{bind-attr class="entry.deleteToggle:bg-danger"}}>
   <div class="col-xs-8 text-left">
-    <span class="entry-title">{{#link-to 'entry' entry}}{{entry.title}}{{/link-to}}</span>
+    <span class="entry-title">
+
+      {{#link-to 'entry' entry}}
+        {{entry.title}}
+      {{/link-to}}
+
+    </span>
   </div>
+
   {{#if session.isAuthenticated}}
-  <div class="col-xs-4 text-right">
-    {{#link-to 'entry.edit' entry}}<button class="btn btn-primary" type="button">Edit</button>{{/link-to}}
-    {{#if entry.deleteToggle}}
-    <button class="btn btn-warning" type="button" {{action 'toggleDelete'}}>Cancel</button>
-    <button class="btn btn-danger" type="button" {{action 'delete'}}>Sure?</button>
-    {{else}}
-    <button class="btn btn-danger" type="button" {{action 'toggleDelete'}}>Delete</button>
-    {{/if}}
-  </div>
+
+    <div class="col-xs-4 text-right">
+
+      {{#link-to 'entry.edit' entry}}
+        <button class="btn btn-primary" type="button">Edit</button>
+      {{/link-to}}
+
+      {{#if entry.deleteToggle}}
+        <button class="btn btn-warning" type="button" {{action 'toggleDelete'}}>Cancel</button>
+        <button class="btn btn-danger" type="button" {{action 'delete'}}>Sure?</button>
+      {{else}}
+        <button class="btn btn-danger" type="button" {{action 'toggleDelete'}}>Delete</button>
+      {{/if}}
+
+    </div>
+
   {{/if}}
+
   <div class="col-xs-8 text-left">
     <span class="entry-tags">
+
       {{#each tag in entry.tags}}
-      {{#link-to 'tag' tag}}{{tag}}{{/link-to}}
+
+        {{#link-to 'tag' tag}}
+          {{tag}}
+        {{/link-to}}
+
       {{/each}}
+
     </span>
   </div>
   <div class="col-xs-4 text-right">
     <span class="entry-timestamp">{{calendar-time entry.modified}}</span>
   </div>
 </div>
-{{/unless}}

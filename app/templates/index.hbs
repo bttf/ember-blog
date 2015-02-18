@@ -1,7 +1,9 @@
 {{#each entry in controller}}
+  {{#unless entry.isDirty}}
 
-  {{partial 'index-list'}}
-
+    {{partial 'index-list'}}
+  
+  {{/unless}}
 {{/each}}
 
 
