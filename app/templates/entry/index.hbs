@@ -8,16 +8,6 @@
 
     {{title}}
 
-    {{#if session.isAuthenticated}}
-
-      <div class='entry-index-editLink'>
-
-        {{#link-to 'entry.edit' this class='text-primary'}}edit{{/link-to}}
-
-      </div>
-
-    {{/if}}
-
   </div>
 
 
@@ -26,4 +16,15 @@
     {{markdown-to-html body}}
 
   </div>
+  {{#if session.isAuthenticated}}
+
+    <div class='entry-index-editLink'>
+
+      {{#link-to 'entry.edit' this class='text-primary'}}edit{{/link-to}}
+
+    </div>
+
+  {{/if}}
+
 </div>
+
