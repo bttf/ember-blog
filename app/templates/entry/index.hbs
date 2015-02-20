@@ -4,13 +4,22 @@
     {{#link-to 'index'}} <i class="fa fa-angle-double-left"></i> back {{/link-to}}
 
   </div>
-  <h1 class="entry-index-title">{{title}}</h1>
+  <div class="entry-index-title">
 
-  {{#if session.isAuthenticated}}
+    {{title}}
 
-    {{#link-to 'entry.edit' this}}edit{{/link-to}}
+    {{#if session.isAuthenticated}}
 
-  {{/if}}
+      <div class='entry-index-editLink'>
+
+        {{#link-to 'entry.edit' this class='text-primary'}}edit{{/link-to}}
+
+      </div>
+
+    {{/if}}
+
+  </div>
+
 
   <div class='entry-index-body'>
 
