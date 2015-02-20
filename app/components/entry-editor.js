@@ -3,7 +3,7 @@ import Ember from 'ember';
 var $ = Ember.$;
 
 export default Ember.Component.extend({
-  autoSaveEnabled: false,
+  autoSaveEnabled: true,
   autoSaveTimeouts: [],
 
   autoSaveHandler: function() {
@@ -17,7 +17,7 @@ export default Ember.Component.extend({
     } else {
       $('.body-input').off('keyup');
     }
-  }.observes('autoSaveEnabled'),
+  }.on('didInsertElement').observes('autoSaveEnabled'),
 
   actions: {
     saveOnly: function(entry) {
