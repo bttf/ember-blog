@@ -14,6 +14,8 @@ app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 app.import('bower_components/font-awesome/css/font-awesome.css');
 app.import('bower_components/marked/lib/marked.js');
 app.import('bower_components/moment/min/moment.min.js');
+app.import('bower_components/highlightjs/highlight.pack.js');
+app.import('bower_components/highlightjs/styles/atelier-lakeside.light.css');
 
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
