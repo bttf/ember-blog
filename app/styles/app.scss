@@ -27,6 +27,15 @@ h3 {
   margin: 0;
 }
 
+.disqus {
+  margin: 2em 0;
+  a.commentToggle {
+    color: #AAA;
+    font-style: italic;
+    font-size: 1.0em;
+  }
+}
+
 .login {
   margin-top: 3em;
 }

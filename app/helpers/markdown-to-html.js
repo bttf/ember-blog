@@ -9,10 +9,10 @@ export function markdownToHtml(input) {
         if (lang === 'ignore') {
           return code;
         } else {
-          return hljs.highlight(lang, code).value;
+          return window.hljs.highlight(lang, code).value;
         }
       } else {
-        return hljs.highlightAuto(code).value;
+        return window.hljs.highlightAuto(code).value;
       }
     }
   });

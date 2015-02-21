@@ -19,7 +19,10 @@ module.exports = function(environment) {
 
     APP: {
       api_host: 'http://localhost:3000',
-      limit: 6 
+      limit: 6,
+      disqus: {
+        shortname: 'chewbongablog'
+      }
     }
   };
 
