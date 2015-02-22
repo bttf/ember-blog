@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   deleteToggle: false,
+  showComments: false,
   actions: {
     toggleDelete: function() {
       if (this.get('deleteToggle')) {
