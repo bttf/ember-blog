@@ -1,4 +1,7 @@
 import Ember from 'ember';
+
+var hljs = window.hljs;
+
 export function markdownToHtml(input) {
   if (Ember.isEmpty(input)) {
     return input;
@@ -6,13 +9,13 @@ export function markdownToHtml(input) {
   window.marked.setOptions({
     highlight: function(code, lang) {
       if (lang) {
-        if (lang === 'ignore') {
+        if (lang === 'ignore' || !hljs.getLanguage(lang)) {
           return code;
         } else {
-          return window.hljs.highlight(lang, code).value;
+          return hljs.highlight(lang, code).value;
         }
       } else {
-        return window.hljs.highlightAuto(code).value;
+        return hljs.highlightAuto(code).value;
       }
     }
   });
