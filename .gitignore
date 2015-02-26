@@ -6,7 +6,7 @@
 
 # dependencies
 /node_modules
-/bower_components/*
+/bower_components
 
 # misc
 /.sass-cache
@@ -17,4 +17,3 @@ npm-debug.log
 testem.log
 
 *.swp
-
