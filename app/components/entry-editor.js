@@ -7,9 +7,7 @@ export default Ember.Component.extend({
   autoSaveTimeouts: [],
 
   autoSaveHandler: function() {
-    var enabled = this.get('autoSaveEnabled');
-
-    if (enabled) {
+    if (this.get('autoSaveEnabled')) {
       var _this = this;
       $('.body-input').keyup(function() {
         pushAutoSaveTimeout(_this);
@@ -19,16 +17,21 @@ export default Ember.Component.extend({
     }
   }.on('didInsertElement').observes('autoSaveEnabled'),
 
+  saveMsgFadeaway: function() {
+    $('.tempSave').stop();
+    $('.tempSave').fadeIn(50);
+    setTimeout(function() {
+      $('.tempSave').fadeOut(5000);
+    }, 500);
+  }.observes('saved'),
+
   actions: {
     saveOnly: function(entry) {
       entry.set('tags', parseTags(entry.get('tags')));
-
       this.sendAction('saveEntry', entry);
     },
-
     saveAndSubmit: function(entry) {
       entry.set('tags', parseTags(entry.get('tags')));
-
       this.sendAction('saveEntry', entry, 'entry');
     }
   }
@@ -47,7 +50,6 @@ function pushAutoSaveTimeout(component) {
       _this.send('saveOnly', _this.get('entry'));
     };
   })(component);
-
   // pop existing
   if (arr.length > 0) {
     for (var i = 0; i < arr.length; i++) {

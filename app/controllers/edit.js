@@ -6,7 +6,6 @@ export default Ember.ObjectController.extend({
       var _this = this;
       entry.save().then(function(entry) {
         _this.set('saved', entry.get('modified'));
-
         if (!Ember.isEmpty(route)) {
           _this.transitionToRoute(route, entry);
         }
